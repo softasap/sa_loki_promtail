@@ -9,6 +9,8 @@ loki_dir: "{{ loki_base_dir }}"
 loki_config_dir: /etc/loki_promtail
 loki_promtail_version: "1.2.0"
 
+loki_server_url: http://127.0.0.1:3100
+
 promtail_additional_groups: adm
 
 loki_dist_url: "https://github.com/grafana/loki/releases/download/v{{ loki_promtail_version }}/promtail-linux-amd64.zip"
