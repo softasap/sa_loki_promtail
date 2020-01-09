@@ -97,7 +97,7 @@
 
   - name: Loki | Template upgrade script
     template:
-       src: "{{ role_dir }}/templates/upgrade.sh.j2"
+       src: templates/upgrade.sh.j2
        dest: "{{ loki_base_dir }}/upgrade.sh"
        owner: root
        group: root
