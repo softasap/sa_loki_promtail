@@ -15,6 +15,7 @@ scrape_configs:
       path: /var/log/journal
       labels:
         job: systemd-journal
+        hostname: {{ ansible_hostname }}
     relabel_configs:
       - source_labels: [__journal__systemd_unit]
         regex: session-*scope
@@ -28,6 +29,7 @@ scrape_configs:
   #       - localhost
   #     labels:
   #       job: nginx
+  #       hostname: {{ ansible_hostname }}
   #       __path__: /var/log/{app_access,app_error,error}.log
   # - job_name: php
   #   entry_parser: raw
@@ -35,5 +37,6 @@ scrape_configs:
   #   - targets:
   #       - localhost
   #     labels:
-  #       job: nginx
+  #       job: php
+  #       hostname: {{ ansible_hostname }}
   #       __path__: /var/log/php7.2-fpm.log
