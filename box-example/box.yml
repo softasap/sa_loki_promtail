@@ -35,7 +35,8 @@
   roles:
 
      - {
-        role: "sa_loki_promtail"
+        role: "sa_loki_promtail",
+        loki_server_url: "http://10.9.0.138:3100"
        }
 
 
