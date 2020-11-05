@@ -1,12 +1,16 @@
 ---
   - name: Loki Promtail | Dependencies
-    package: name=unzip state=present
+    package:
+      name: unzip
+      state: present
     become: yes
     tags:
       - promtail
 
   - name: Loki Promtail | create group
-    group: name={{ loki_group }}  state=present
+    group:
+      name: "{{ loki_group }}"
+      state: present
     become: yes
     tags:
       - loki
@@ -31,6 +35,7 @@
       state: "directory"
       owner: "{{ loki_user }}"
       group: "{{ loki_group }}"
+      mode: '0755'
     become: yes
     tags:
       - loki
@@ -41,6 +46,7 @@
       state: "directory"
       owner: "root"
       group: "{{ loki_group }}"
+      mode: '0755'
     become: yes
     tags:
       - loki
@@ -59,6 +65,7 @@
       src: "{{ loki_dist_location }}"
       dest: "{{ loki_base_dir }}"
       remote_src: yes
+      mode: u+rw,g-wx,o-rwx
     become: yes
     tags:
       - loki
@@ -117,9 +124,11 @@
       - loki
 
   - name: Loki  | Configuring startup
-    service: name="promtail" state="started" enabled="yes"
+    service:
+      name: promtail
+      state: started
+      enabled: yes
     when: docker_test is not defined
     become: yes
     tags:
       - loki
-

@@ -1,4 +1,4 @@
 ---
 # tasks file for sa_loki_promtail
 
-  - include: tasks_loki_promtail.yml
+  - include_tasks: tasks_loki_promtail.yml
