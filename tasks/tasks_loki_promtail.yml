@@ -1,6 +1,8 @@
 ---
   - name: Loki Promtail | Dependencies
-    package: name=unzip state=present
+    package:
+      name: unzip 
+      state: present
     become: yes
     tags:
       - promtail
