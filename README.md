@@ -2,6 +2,7 @@ sa_loki_promtail
 ================
 
 [![Build Status](https://travis-ci.com/softasap/sa_loki_promtail.svg?branch=master)](https://travis-ci.com/softasap/sa_loki_promtail)
+[![Build Status](https://github.com/softasap/sa_loki_promtail/workflows/CI/badge.svg?event=push)](https://github.com/softasap/sa_loki_promtail/actions?query=workflow%3ACI)
 
 Example of usage:
 
